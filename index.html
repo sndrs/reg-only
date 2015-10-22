@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="node_modules/systemjs/dist/system-register-only.src.js"></script>
+    <script>
+    System.paths = {
+        // System.config({bundles: {...}})
+        "libs": "build/libs.js",
+        "app": "build/app.js",
+
+        // System.config({map: {...}})
+        "domready": "npm:domready@1.0.8"
+    }
+
+    System.import('libs').then(function () {
+        return System.import('domready');
+    }).then(function (domready) {
+        console.log("domready", domready);
+        domready(function() {
+            System.import('app').then(function (init) {
+                init()
+            });
+        })
+    });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
