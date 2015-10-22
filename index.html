@@ -14,14 +14,17 @@
     }
 
     System.import('libs').then(function () {
+
         return System.import('domready');
+
     }).then(function (domready) {
+
         console.log("domready", domready);
-        domready(function() {
-            System.import('app').then(function (init) {
-                init()
-            });
-        })
+        System.import('app').then(function (app) {
+            console.log('app', app);
+            app();
+        });
+
     });
     </script>
 </head>

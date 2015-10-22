@@ -1,5 +1,4 @@
-import domready from 'domready';
-
-// import _ from 'lodash';
+import _ from 'lodash';
 // etc…
 
+// do nothing, just load these deps
